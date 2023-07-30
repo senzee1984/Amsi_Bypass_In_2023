@@ -10,7 +10,7 @@ HRESULT AmsiOpenSession(
 );
 ```
 
-This powershell script can be used to bypass AMSI by patching AmsiOpenSession. According to the assemble codes, if any condition of the following is met, the function will exit with `E_INVALIDARG` error. 
+This powershell script can be used to bypass AMSI by patching AmsiOpenSession. According to the assemble codes, if **anyone** of the following conditions is met, the function will exit with `E_INVALIDARG` error. 
 1. RCX is 0
 2. RDX is 0
 3. The 2nd QWORD of HAMSICONTEXT structure is 0
