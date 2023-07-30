@@ -43,6 +43,8 @@ This powershell script can be used to bypass AMSI by patching AmsiScanBuffer. Th
 
 **Patching AmsiScanBuffer can bypass AMSI for Assembly.Load()**
 
+![image](/screenshot/scanbuffer_dnet.jpg)
+
 ## one-liner-payload.md
 
 This file contains one-liner payloads that can be used in the current powershell session and immediately bypass AMSI. However, it cannot bypass AMSI for `Assembly.Load()`.
