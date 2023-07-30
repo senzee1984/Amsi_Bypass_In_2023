@@ -16,11 +16,16 @@ This powershell script can be used to bypass AMSI by patching AmsiOpenSession. A
 3. The 2nd QWORD of HAMSICONTEXT structure is 0
 4. The 3rd QWORD of HAMSICONTEXT structure is 0
 
-![](screentshot/amsiopensession.jpg)
+
+![image](/screenshot/amsiopensession.jpg)
 
 This script patches AmsiOpenSession by setting RCX to 0.
 
-## Attack_AmsiScanBuffer
+![image](/screenshot/opensession_bypass.jpg)
+
+**Patching AmsiOpenSession cannot bypass AMSI for Assembly.Load()**
+
+## Attack_AmsiScanBuffer.ps1
 
 ```c++
 HRESULT AmsiScanBuffer(
@@ -34,6 +39,12 @@ HRESULT AmsiScanBuffer(
 ```
 This powershell script can be used to bypass AMSI by patching AmsiScanBuffer. The script patches AmsiScanBuffer by setting RAX to the value of error `E_INVALIDARG` and return immediately.
 
+![image](/screenshot/scanbuffer_bypass.jpg)
+
+**Patching AmsiScanBuffer can bypass AMSI for Assembly.Load()**
+
 ## one-liner-payload.md
 
-This file contains one-liner payload than can be used in the current powershell session and immediately bypass AMSI. However, it cannot bypass AMSI for .NET assembly in memory.
+This file contains one-liner payloads that can be used in the current powershell session and immediately bypass AMSI. However, it cannot bypass AMSI for `Assembly.Load()`.
+
+Details can be found in this file.
